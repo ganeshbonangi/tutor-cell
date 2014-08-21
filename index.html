@@ -20,7 +20,14 @@
 	</head>
 
 	<body >
-		<div ng-view> </div>
+			<a ng-href="#/examSetting">exam setting</a>
+
+			<a ng-href="#/userSetting">user setting</a>
+
+			<a ng-href="#/questionSetting">question setting</a>
+		<div ng-view>
+			
+		</div>
 		<!-- build:js plugins/plugin.min.js -->
 		<script src="plugins/jquery/jquery-1.10.2.js" type="text/javascript"></script>
 		<script src="plugins/angular/angular.js" type="text/javascript"></script>
@@ -31,7 +38,7 @@
 		<!-- build:js scripts/app.min.js -->
    	 	<script src="scripts/main.js" type="text/javascript"></script>
 		<!--script src="scripts/server.js" type="text/javascript"></script-->
-		<script src="scripts/controllers/examController.js" type="text/javascript"> </script>
+		<script src="scripts/controllers/examSettingController.js" type="text/javascript"> </script>
 		<script src="scripts/services/services.js" type="text/javascript"> </script>
 		<!-- endbuild -->
 	</body>
