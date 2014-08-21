@@ -1,0 +1,89 @@
+<style>
+.homeViewContainer,#home-top-bar{
+	display: none;
+}
+</style>
+<div ng-controller="examController" class="examSection">
+	<!--this is the section container-->
+	<div class="welcomeNote"> Welcome to online examination center</div><div id="content"></div>
+	  		<b>Sections</b><div class="timeContainer">Remaining time &nbsp;&nbsp;<div exam-timer total-time="02:15:00" on-end="startProcess(0,0,0)"></div></div>
+			<div class="sectionContainer">
+				<button class="btn btn-default" ng-class="{'btn-primary':section==tab.name}" ng-repeat="tab in dataObj.sections" ng-click="updateSection(tab.name,$index)"> {{tab.name}}</button>
+			</div><br />
+<div class="leftAndRight">
+	<div class="leftSideContainer">
+		 
+		<div><b>Question No.{{index+1}}:</b></div>
+		<div class="scrollContainer">
+			<div class="instructions"><div ng-bind-html="question_information">  </div></div><br />
+			<div class="questionContainer">
+				<div><div ng-bind-html="question"></div></div><br />
+				<div ng-repeat="option in options"> 
+					<input type="radio" name="rbg" id="{{$index}}" />
+					<label for="{{$index}}" ng-bind-html="option" class="optionLabel">  </label> </div>
+			</div>			
+		</div>
+		
+	</div>
+	<div class="rightSideContainer">
+		
+		<div class="questionButton">
+			<div class="questionSectionInfo">You are viewing <b>{{section}}</b> section<br/>Question Palette</div>
+			<div class="indexedButtons">
+				<button class="btn btn-mini btn-default" ng-repeat="a in range(total_questions) track by $index" ng-click="updateQuestion($index)">{{$index + 1}}</button>
+			</div>
+		</div>
+		<div class='profileContainer'></div><!--this is profile container-->
+	</div>
+</div>
+	<div>
+	   <script type="text/ng-template" id="myModalContent.html">
+	        <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="closePopup()">&times;</button>
+			    <h4 class="modal-title" id="myModalLabel">Exam Summary</h4>
+		  </div>
+		  <div class="modal-body">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Section name</th>
+						<th>No. of Questions</th>
+						<th>Read Questions</th>
+						<th>Correctly answered</th>
+						<th>Not attempted</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>{{scoreObj.name}}</td></tr>
+					<tr ng-repeat="(key, value) in scoreObj">
+						<td>{{key}}</td>
+						<td>{{value.noOfQuestions}}</td>
+						<td>{{value.answered}}</td>
+						<td>{{value.correctAnswered}}</td>
+						<td>{{value.notAnswered}}</td>
+						
+					</tr> 		 
+				</tbody>
+			</table>	
+		  </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" ng-click="viewAns()">Check Answers</button>
+	            <!--button class="btn btn-warning" ng-click="cancel()">Cancel</button-->
+	        </div>
+	    </script>
+	    
+    
+
+			
+
+	</div>
+<div class="bottomNavigationContainer">
+			<button id="review" class="btn btn-mini btn-default" ng-click="saveNreview('review')" >Make for Review & Next</button>
+			<button id="clear" class="btn btn-mini btn-default" ng-click="clearResponse()"  >Clear Response</button>
+			<button id="save" class="btn btn-mini btn-primary"  ng-click="saveNreview('save')">Save & Next</button>
+			<button class="btn btn-warning"  ng-click="open('lg')" style="float:right" data-toggle="modal" data-target=".bs-example-modal-lg">submit</button>
+</div>
+<div ng-class="showPreloader ? 'showPreloader' : 'hidePreloader'">
+<!--img src="css/images/loader.gif" /-->
+</div>
+</div>

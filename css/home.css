@@ -1,0 +1,115 @@
+.logoContainer{
+	box-shadow: 0px 0px 17px hsl(0, 0%, 78%);
+	-webkit-box-shadow: 0px 0px 17px hsl(0, 0%, 78%);
+	-moz-box-shadow: 0px 0px 17px #c8c8c8;
+	-ms-box-shadow: 0px 0px 17px #c8c8c8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom:10px;
+}
+.homeViewContainer{
+	margin: 0 2%;
+}
+body{
+/*background:url("content/background.jpg");*/
+}
+body,html{
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;  
+	font-family:"arial";
+	font-size:16px;
+}
+@font-face {   
+	font-family:'arial';
+    /*src:url('font/lucida_grande-webfont.woff') format('woff');*/
+}
+.timeContainer *{
+	font-weight: bold;
+	display: inline-block;
+}
+.timeContainer{
+	display: inline-block;
+	float: right;
+}
+#links{
+	float:left;
+}
+#loginWrapper,#registrationWrapper{
+	padding:30px;
+	position:relative;
+	margin:0 auto;
+}
+#registrationWrapper{
+	float:left;
+	margin-left:150px;
+	width:450px;
+}
+#loginWrapper{
+	float:right;
+	margin-right:0px;
+}
+#loginButton{
+	margin-top: 22px;
+	margin-left: 25px;
+}
+.form-group{
+margin-left:15px;
+}
+h4 {
+text-align: center;
+}
+.navbar-brand {
+float: left;
+/* padding: 15px 15px; */
+font-size: 50px;
+line-height: 20px;
+margin-top: 40px;
+margin-left: 150px;
+font-weight: bolder;
+}
+ @media(min-width:2px) and (max-width:500px) {
+#registrationWrapper,#loginWrapper{
+	width: 270px;
+	padding: 20px 20px;
+	margin: 0 auto ;
+	float:none;
+}
+} 
+#header {
+	display: inline-block;
+	height: auto;
+	width: 100%;
+	background-color:#3B5998;
+
+}
+#logo {
+	margin-left: 180px;
+	float: left;
+	/* height: 131px; */
+	/* padding: 62px; */
+	font-size: 32px;
+	margin-top: 50px;
+	font-weight: bold;
+	font-family: arial;
+	color: #fff;
+	opacity: 0.9;
+}
+
+ @media(min-width:2px) and (max-width:500px) {
+#logo{
+	font-size:30px;
+	margin-left: 104px;
+}
+}
+#registerButton {
+	margin-left: 14px;
+}
+.loginlables{
+	color:#fff;
+}
