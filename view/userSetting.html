@@ -1,3 +1,12 @@
-<div id="userSetting">
-	<div>This is user setting view</div>
+<div ng-controller="userSettingController">
+<hr />
+	<button ng-click="addClassRoom()"> +Add Class Room </button>
+<hr />
+	<table>
+		<tr ng-repeat="classRoom in classRooms">
+			<td>{{classRoom.name}}</td>
+			<td><a ng-click="editClass($index)">edit</a>/<a ng-click="deleteClass($index)">delete</a></td>
+		</tr>
+	</table>
+<hr />
 </div>
