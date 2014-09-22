@@ -1,4 +1,5 @@
 <div ng-controller="examSettingController">
+<<<<<<< HEAD
 	<table class="table table-hover table-striped">
       <thead>
       	<tr>
@@ -61,3 +62,38 @@
 	</div>
 
 </div>
+=======
+	<div> This view will show list of exams and with edit and delete options </div>
+	<hr />
+	<button ng-click="activeMockTest={};">+ Add mock test</button>
+	
+	<hr />
+	
+	<table>
+	<tr>
+		<td>Name</td>
+		<td>Class Room</td>
+		<td>Start of Exam</td>
+		<td>End of Exam</td>
+		<td>Operation</td>
+	</tr>
+	<tr ng-repeat="mockTest in mockTests">
+		<td>{{mockTest.name}}</td>
+		<td>{{mockTest.className}}</td>
+		<td>{{mockTest.startDate}}</td>
+		<td>{{mockTest.endDate}}</td>
+		<td><a ng-click="editMockTest($index)">edit</a>/<a ng-click="deleteMockTest($index)">delete</a></td>
+	</tr>
+	</table>
+	<hr />
+	the below code should shown in pop<br />
+	Enter mock test name: <input type="text" required/>
+	<div ng-repeat="section in sections">
+	section:<input type="text" required/>	
+	</div>
+	start date<input type="date" />
+	end date<input type="date" />
+	duration <timepicker ng-model="duration" ng-change="changed()" hour-step=1 minute-step=1 show-meridian=false ></timepicker>
+	<button>Save exam settings</button><!--as soon save the exam it should the item to the $scope.mockTests so that it will visable in the list-->
+</div>
+>>>>>>> bb7a58703dcabaed64e0aab8e2615f970c1224ff
