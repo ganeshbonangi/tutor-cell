@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 app.controller("examSettingController",function($scope,MockTestService,$modal){
 	$scope.sections=[0];
 	$scope.sectionNames=[];
@@ -46,17 +45,6 @@ app.controller("examSettingController",function($scope,MockTestService,$modal){
 
 
 
-=======
-app.controller("examSettingController",function($scope,MockTestService){
-	$scope.sections=[1,2,3];
-	$scope.mockTests = MockTestService.getMocktests();
-	$scope.deleteMockTest = function(index){
-		$scope.mockTests = MockTestService.deleteMocktest(index);
-	}
-	$scope.editMockTest = function(index){
-		$scope.mockTests = MockTestService.editMocktest(index);
-	}
->>>>>>> bb7a58703dcabaed64e0aab8e2615f970c1224ff
 });
 
 

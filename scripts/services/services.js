@@ -9,7 +9,6 @@ app.service("TutorService",function($rootScope,$sce){
 
 }).service("MockTestService",function($rootScope){
 
-<<<<<<< HEAD
 			this.editOrAddMocktest = function(obj){
 				    if(obj.id){
 				      //hit insert service
@@ -52,43 +51,6 @@ app.service("TutorService",function($rootScope,$sce){
 
 			}
 
-=======
-			this.addMocktest = function(){
-
-			},
-			this.deleteMocktest = function(index){
-				
-			},
-			this.addSections = function(){
-
-			},
-			this.editMocktest = function(index){
-				//update the json object 
-			},
-			this.getMocktests = function(){
-				return [{
-							id:1,
-							name:"sampletest",
-							sections:["section1","section2","section3","section4"],
-							className:"fifth",
-							startDate:"12/08/2014",
-							endDate:"15/09/2014",
-							time:"01:10",
-							tutorId:1,
-							theme:"default"
-						},{
-							id:2,
-							name:"sampletest2",
-							sections:["section21","section22","section23","section24"],
-							className:"sisth",
-							startDate:"12/08/2014",
-							endDate:"15/09/2014",
-							time:"02:20",
-							tutorId:1,
-							theme:"default"
-						}];
-			}	
->>>>>>> bb7a58703dcabaed64e0aab8e2615f970c1224ff
 }).service("QuestionService",function($rootScope){
 
 			this.addQuestion = function(){
