@@ -94,4 +94,16 @@ app.service("TutorService",function($rootScope,$sce){
 			this.deleteUser = function(){
 				
 			}
+}).service("profileService",function(){
+
+	this.getProfile(username){
+		return {
+                  "name":"ganesh",
+                  "password":"password",
+                  "mail_id":"ganesh.bonangi@gmail.com",
+                  "phone":949979407
+  };
+	}
+}).service("loginService", function(user){
+	return user.name;//should hit the service with user credentials
 });

@@ -1,0 +1,27 @@
+<div ng-controller="profileCtrl">
+
+<div class="row">
+  <input type="text" ng-model="profile.name" ng-disabled="editname" class="col-xs-4"/>
+  <a href="" ng-model="editname" ng-click="editname=!editname" class="col-xs-4" >{{editname?'change':'save'}}</a>
+</div>
+
+
+<div class="row">
+  <input type="text" ng-model="profile.mail_id" ng-disabled="editmail_id" class="col-xs-4"/>
+  <a href="" ng-model="editmail_id" ng-click="editmail_id=!editmail_id" class="col-xs-4" >{{editmail_id?'change':'save'}}</a>
+</div>
+
+<div class="row">
+	<input type="text" ng-model="profile.phone" ng-disabled="editphone" class="col-xs-4"/>
+	{{profile.phone}}
+	<a href="" ng-model="editphone" ng-click="editphone=!editphone" class="col-xs-4" >{{editphone?'change':'save'}}</a>
+</div>
+
+<div class="row">
+	<input type="text" ng-model="profile.password" ng-disabled="editpassword" class="col-xs-4"/>
+	{{profile.password}}
+	<a href="" ng-model="editpassword" ng-click="editpassword=!editpassword" class="col-xs-4" >{{editpassword?'change':'save'}}</a>
+</div>
+
+
+</div>
