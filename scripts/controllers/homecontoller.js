@@ -1,10 +1,11 @@
-app.controller("loginCtrl",function(loginService, $location{
+app.controller("homeController",function($scope, $location, loginService){
 	$scope.authenticateUser = function(){
 
 			//should hit the authentication server for validating credentials
-			if(loginService.authenticate(user)){
+			var key = loginService.authenticate(this.user);
+			if(key){
 				//authenticated
-				$location.path();
+				$location.path(key);
 			}else{
 				alert("credentials wrong");
 			}

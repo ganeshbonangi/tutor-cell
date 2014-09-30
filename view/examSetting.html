@@ -9,14 +9,47 @@
       </thead>
 		<tr ng-repeat="exam in mockTests">
 			<td>{{$index+1}}</td>
-			<td>{{exam.name}}</td>
-			<td><a ng-click="editMocktest($index)">Edit</a>/<a ng-click="deleteMocktest($index)">Delete</a></td>
+			<td>				
+				<a ng-click="previewMocktest($index)">{{exam.name}}</a>
+			</td>
+			<td>
+				<a ng-click="questionsListView($index)">Add questions</a>/
+				<a ng-click="questionsListView($index)">Edit or delete questions</a>/
+				<a ng-click="studentsListView($index)">Sudents</a>/
+				<a ng-click="editMocktest($index)">Edit Mocktest</a>/
+				<a ng-click="deleteMocktest($index)">Delete Mocktest</a>
+			</td>
 		</tr>
 	</table>
 	
 	<!--div ng-show="showSettingsForm" class="transparentLayer"></div-->
 <div >
 <button class="btn"  ng-click="addMocktest( )">Add Mocktest</button><br />
+
+<script type="text/ng-template" id="studentList.html">
+	    <div class="modal-header">
+            <h3 class="modal-title">Add edit student to the {{currentMocktest.name}}</h3>
+        </div>
+        <div class="modal-body">
+        	<table>
+	        	<tr>
+					<thead>
+						<td>#</td>
+						<td>Students</td>
+						<td>Operations</td>
+		        	</thead>
+	        	</tr>
+	        	<tr ng-repeat="student in currentMocktest.students">
+	        		<td>{{$index+1}}</td>
+	        		<td><input type="text" class="form-control" ng-model="$parent.currentMocktest.students[$index]" /></td>
+	        		<td><a ng-click="deleteStudent($index)">Delete</a></td>
+	        	</tr>
+        	</table>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" ng-click="cancel()">Okey</button>
+        </div>
+</script>
 
 
     <script type="text/ng-template" id="myModalContent.html">
@@ -53,10 +86,6 @@
             <button class="btn btn-primary" ng-click="save()">Save exam settings</button>
             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
         </div>
-    
-
-
-
 		</script>
 	</div>
 

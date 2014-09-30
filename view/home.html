@@ -1,4 +1,4 @@
-<div class="homeViewContainer"> 
+<div class="homeViewContainer" ng-controller="homeController"> 
 	<div id='header'>
 		<div id='logo'>
 		ExamColors
@@ -7,7 +7,7 @@
 			<form role="form" class='form-inline'>
 			<div class="form-group">
 					<label for="username" class='loginlables'>Username/Phone no</label>
-					<input type="email" class="form-control" id="loginInputEmail" ng-model="user.name" placeholder="Enter email/ Phone no">
+					<input type="text" class="form-control" id="loginInputEmail" ng-model="user.name" placeholder="Enter email/ Phone no">
 			</div>
 			<div class="form-group">
 					<label for="password" class='loginlables'>Password</label>

@@ -17,9 +17,37 @@ app.controller("examSettingController",function($scope,MockTestService,$modal){
 		$scope.mockTests.splice(index,1);
 	}
 	$scope.mockTests = MockTestService.getMocktests();
+  $scope.studentsListView = function(index){
+    //have to write filter for getting the studnets in the mocktest id
+    $scope.currentMocktest=$scope.mockTests[index];
+    $scope.students = $scope.currentMocktest.students;
 
+    $scope.openStudentModel('lg');
+  }
 
+  $scope.openStudentModel = function(size){
 
+    var modalInstance = $modal.open({
+      templateUrl: 'studentList.html',
+      controller: studentListCtrl,
+      size: size,
+      resolve: {
+        currentMocktest: function () {
+          return $scope.currentMocktest;//$scope.items;
+        },
+        students: function () {
+          return $scope.students;//$scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      //$scope.selected = selectedItem;
+    }, function () {
+      //$log.info('Modal dismissed at: ' + new Date());
+    });
+
+  }
   $scope.open = function (size) {
 
     var modalInstance = $modal.open({
@@ -37,7 +65,7 @@ app.controller("examSettingController",function($scope,MockTestService,$modal){
     });
 
     modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
+      //$scope.selected = selectedItem;
     }, function () {
       //$log.info('Modal dismissed at: ' + new Date());
     });
@@ -47,6 +75,23 @@ app.controller("examSettingController",function($scope,MockTestService,$modal){
 
 });
 
+var studentListCtrl = function ($scope, $modalInstance, students, currentMocktest,MockTestService){
+
+    $scope.currentMocktest = currentMocktest;
+    $scope.students = students;
+    $scope.addStudent = function(obj){
+      $scope.students.push(obj);
+    };
+    $scope.deleteStudent = function(index){
+      $scope.students.splice(index, 1);
+    }
+    $scope.cancel = function () {
+      MockTestService.saveStudents(currentMocktest);
+      $scope.currentMocktest={};
+      $modalInstance.dismiss('cancel');
+    };
+
+}
 
 var ModalInstanceCtrl = function ($scope, $modalInstance, currentMocktest, MockTestService, mockTests) {
 

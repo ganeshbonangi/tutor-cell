@@ -28,6 +28,7 @@ app.service("TutorService",function($rootScope,$sce){
 						endDate:"22-06-2014",
 						durationHH:02,
 						durationMM:22,
+						students:["student1","student2","student3"],
 						id:1
 					},{
 						name:"mocktest2",
@@ -35,6 +36,7 @@ app.service("TutorService",function($rootScope,$sce){
 						startDate:"22-05-2014",
 						endDate:"22-06-2014",
 						duration:"2:20",
+						students:["student1","student2","student3"],
 						id:2
 					},{
 						name:"mocktest3",
@@ -42,6 +44,7 @@ app.service("TutorService",function($rootScope,$sce){
 						startDate:"22-05-2014",
 						endDate:"22-06-2014",
 						duration:"3:30",
+						students:["student1","student2","student3"],
 						id:3
 					}
 				];
@@ -49,6 +52,8 @@ app.service("TutorService",function($rootScope,$sce){
 
 			},this.addSections = function(){
 
+			},this.saveStudents = function(obj){
+				//update the existing student list in the given mocktest
 			}
 
 }).service("QuestionService",function($rootScope){
@@ -96,14 +101,20 @@ app.service("TutorService",function($rootScope,$sce){
 			}
 }).service("profileService",function(){
 
-	this.getProfile(username){
+	this.getProfile = function(username){
 		return {
                   "name":"ganesh",
                   "password":"password",
                   "mail_id":"ganesh.bonangi@gmail.com",
                   "phone":949979407
-  };
+  				};
 	}
-}).service("loginService", function(user){
-	return user.name;//should hit the service with user credentials
+}).service("loginService", function(){
+
+	this.authenticate = function(user){
+		return "examSetting";//should hit the service with user credentials
+
+		//examsetting view will be the teacher view
+	}
+
 });
