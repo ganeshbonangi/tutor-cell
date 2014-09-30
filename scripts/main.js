@@ -4,6 +4,9 @@ app.config(function($routeProvider){
 	$routeProvider.when("/examSetting",{
 									templateUrl:"view/examSetting.html"
 								})
+				   .when("/studentview",{
+									templateUrl:"view/studentview.html"
+								})
 				   .when("/home",{
 									templateUrl:"view/home.html"
 								})

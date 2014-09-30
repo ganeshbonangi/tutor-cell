@@ -112,9 +112,28 @@ app.service("TutorService",function($rootScope,$sce){
 }).service("loginService", function(){
 
 	this.authenticate = function(user){
-		return "examSetting";//should hit the service with user credentials
+		return "studentview";//"examSetting";//should hit the service with user credentials
 
 		//examsetting view will be the teacher view
 	}
 
+}).service("studentService",function(){
+	this.getTests = function(){
+		return [
+				{
+					"name":"test1",
+					"score":"not attempted",
+					"rank":"not "
+				},
+				{
+					"name":"test2",
+					"score":"40",
+					"rank":"3 out of 20"
+				},{
+					"name":"test3",
+					"score":"30",
+					"rank":"2 out of 30"
+				}
+		];
+	}
 });

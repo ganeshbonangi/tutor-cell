@@ -1,0 +1,22 @@
+<div ng-controller="stdentViewController">
+	<table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Mock test</th>
+				<th>Score</th>
+				<th>Rank</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="test in tests">
+				<td>{{$index+1}}</td>
+				<td><a href="http://localhost/login/Exam-Color/index.html#/exam?exam_name=sbi%20clerk">{{test.name}}</a></td>
+				<td>{{test.score}}</td>
+				<td>{{test.rank}}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+
+</div>
